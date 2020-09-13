@@ -1,0 +1,59 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import '~@angular/material/theming';
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$news-aggregator-primary: mat-palette($mat-blue, 700);
+$news-aggregator-accent: mat-palette($mat-light-blue, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$news-aggregator-warn: mat-palette($mat-red);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$news-aggregator-theme: mat-light-theme((
+  color: (
+    primary: $news-aggregator-primary,
+    accent: $news-aggregator-accent,
+    warn: $news-aggregator-warn
+  )
+));
+
+@mixin mat-ripple-theme($news-aggregator-theme) {
+  .mat-ripple-element { background-color: rgba(25, 117, 210, 0.4); }
+}
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($news-aggregator-theme);
+
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+$height-size: 64px;
+$width-size: 85%;
+
+.mat-toolbar-row, .mat-toolbar-single-row { height: $height-size; }
+.mat-drawer-container { height: calc(100vh - #{$height-size}); }
+.mat-drawer { width: calc(100vw - #{$width-size}); @media only screen and (max-width: 992px) { width: 200px; } }
+.mat-expansion-panel:not([class*=mat-elevation-z]) { box-shadow: none; }
+.mat-expansion-panel:not(.mat-expanded) .mat-expansion-panel-header:hover:not([aria-disabled=true]) { background: rgba(25, 117, 210, 0.08); }
+.mat-card { padding: 16px 4PX !important; }
+.mat-card-header .mat-card-title { font-size: 15px; }
+.mat-card-header-text { margin: 0 8px !important; }
+.mat-card-subtitle, .mat-card-content { font-size: 12px; }
+.mat-paginator-container { padding: 0 5px !important;}
+.mat-paginator-outer-container { width: 362px; }
+.mat-paginator-range-actions { width: 100%; }

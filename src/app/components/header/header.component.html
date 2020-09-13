@@ -1,0 +1,17 @@
+<mat-toolbar color="primary">
+  <div id="content">
+    <button id="fix-menu" class="hide-background" (click)="sidebar.toggle(); clickMenu()" aria-label="menu button">
+      <mat-icon class="custom-icon" aria-label="menu icon"
+        [ngClass]="{'rotate': isClickedMenu, 'rotate-back': !isClickedMenu}">menu</mat-icon>
+    </button>
+    <span id="fix-title">News Aggregator</span>
+    <button id="fix-sort" class="hide-background" (click)="clickDate()" aria-label="date button">
+      <mat-icon class="custom-icon" aria-label="date icon">calendar_today
+        <div id="overlay-icon">
+          <mat-icon class="custom-icon" aria-label="sort icon"
+            [ngClass]="{'rotate': isClicked, 'rotate-back': !isClicked}">keyboard_arrow_down</mat-icon>
+        </div>
+      </mat-icon>
+    </button>
+  </div>
+</mat-toolbar>

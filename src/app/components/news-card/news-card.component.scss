@@ -1,0 +1,11 @@
+#body-cards{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  .content-card {
+    max-width: 250px;
+    cursor: pointer;
+    transform: scale(0.95);
+  }
+}

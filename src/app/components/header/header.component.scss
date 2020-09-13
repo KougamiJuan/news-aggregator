@@ -1,0 +1,44 @@
+#content {
+  width: 100%;
+  padding: 0 3%;
+  height: 50%;
+  text-align: center;
+  .custom-icon {
+    font-size: 35px;
+    height: 35px;
+    width: 35px;
+    color: white;
+  }
+  #fix-menu {
+    padding: 0%;
+    float: left;
+    .rotate {
+      transition: all 700ms !important;
+      transform: rotate(180deg);
+      &-back {
+        transition: all 700ms !important;
+        transform: rotate(0deg);
+      }
+    }
+  }
+  #fix-title {
+    display: inline-block;
+    margin: 0 auto;
+    width: 100px;
+  }
+  #fix-sort {
+    float: right;
+    #overlay-icon {
+      position: absolute;
+      top: 21px;
+      .rotate {
+        transition: all 700ms !important;
+        transform: rotate(180deg);
+        &-back {
+          transition: all 700ms !important;
+          transform: rotate(0deg);
+        }
+      }
+    }
+  }
+}

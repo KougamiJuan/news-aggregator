@@ -1,0 +1,17 @@
+<div id="body-cards" *ngIf="!!news && news.length > 0">
+  <mat-card matRipple class="content-card" (click)="goToLink(new.link)"
+    *ngFor="let new of news | slice:((paginator.pageIndex)*pageSize):((paginator.pageIndex+1)*pageSize)">
+    <div>
+      <mat-card-header>
+        <mat-card-title>{{(new.title.length > 55) ? (new.title | slice:0:55) + '...' : (new.title)}}</mat-card-title>
+        <mat-card-subtitle>{{new.pubDate | date:'fullDate':'UTC':'es-CO'}}</mat-card-subtitle>
+      </mat-card-header>
+      <img *ngIf="!!new.enclosure && !!new.enclosure.url" mat-card-image src={{new.enclosure.url}} alt="Photo">
+      <mat-card-content *ngIf="!!new.description">
+        <p>{{new.description.length > 79 ? (new.description | slice:0:79) + '...' : new.description}}</p>
+      </mat-card-content>
+    </div>
+  </mat-card>
+  <mat-paginator id="paginator" #paginator appCustomizePaginator showFirstLastButtons hidePageSize [showTotalPages]="3"
+    [length]="news.length" [pageSize]="pageSize"></mat-paginator>
+</div>

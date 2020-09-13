@@ -1,0 +1,10 @@
+<app-header [sidebar]="drawer" (dateOrder)="transmitDateOrder($event)"></app-header>
+<mat-drawer-container autosize>
+  <mat-drawer class="sidebar" #drawer mode="side" opened>
+    <app-sidebar (news)="collectItems($event)" (isLoading)="isLoading = $event"></app-sidebar>
+  </mat-drawer>
+  <mat-drawer-content>
+    <app-news-card [news]="news" [orderDate]="order"></app-news-card>
+  </mat-drawer-content>
+</mat-drawer-container>
+<app-loading *ngIf="isLoading"></app-loading>

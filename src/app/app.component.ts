@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
 
+/** Main class representing the entire project. */
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.sass']
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'NewsAggregator';
+  /** Application title. */
+  title = 'news-aggregator';
 }
