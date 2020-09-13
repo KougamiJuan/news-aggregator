@@ -1,6 +1,10 @@
 const express = require('express');
+const cors = require('cors');
 const path = require('path');
 const app = express();
+
+// Cross-Origin
+app.use(cors());
 
 // Serve static files....
 app.use(express.static(__dirname + '/dist/news-aggregator'));
