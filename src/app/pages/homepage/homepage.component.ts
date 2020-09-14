@@ -7,8 +7,7 @@ import { Meta } from '@angular/platform-browser';
  */
 @Component({
   selector: 'app-homepage',
-  templateUrl: './homepage.component.html',
-  styleUrls: ['./homepage.component.scss']
+  templateUrl: './homepage.component.html'
 })
 export class HomepageComponent implements OnInit {
   /** List of items transformed as news. */
