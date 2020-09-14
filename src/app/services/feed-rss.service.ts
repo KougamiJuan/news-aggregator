@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { xmlToJson } from 'src/app/utils/transform';
-import { TOPICS } from 'src/app/utils/constants';
+import { TOPICS, PROXY_URL } from 'src/app/utils/constants';
 
 /** Feed connection service. */
 @Injectable({
@@ -19,7 +19,7 @@ export class FeedRssService {
   async getFeeds(): Promise<any[]> {
     const feedRss = [];
     await Promise.all(TOPICS.map(async topic => {
-      const response = await this.http.get(topic, { responseType: 'text' }).toPromise();
+      const response = await this.http.get(PROXY_URL + topic, { responseType: 'text' }).toPromise();
       feedRss.push(xmlToJson(response));
     }));
     return feedRss;

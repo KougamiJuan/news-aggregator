@@ -847,10 +847,10 @@ export class SidebarComponent implements OnInit {
   &lt;div id&#x3D;&quot;title&quot;&gt;
     &lt;h1&gt;&lt;strong&gt;Sources&lt;/strong&gt;&lt;/h1&gt;
   &lt;/div&gt;
-  &lt;mat-accordion&gt;
+  &lt;mat-accordion *ngIf&#x3D;&quot;!!feeds &amp;&amp; feeds.length &gt; 0&quot;&gt;
     &lt;mat-expansion-panel (opened)&#x3D;&quot;panelOpenState &#x3D; true&quot; (closed)&#x3D;&quot;panelOpenState &#x3D; false&quot; *ngFor&#x3D;&quot;let feed of feeds&quot;&gt;
       &lt;mat-expansion-panel-header&gt;
-        &lt;mat-panel-title class&#x3D;&quot;mat-h3&quot;&gt;
+        &lt;mat-panel-title class&#x3D;&quot;mat-h3&quot; *ngIf&#x3D;&quot;!!feed.title&quot;&gt;
           &lt;mat-icon class&#x3D;&quot;custom-icon&quot; aria-hidden&#x3D;&quot;false&quot; aria-label&#x3D;&quot;list icon&quot;&gt;history_edu&lt;/mat-icon&gt;
           {{feed.title | slice:8:feed.title.length}}
         &lt;/mat-panel-title&gt;
@@ -916,7 +916,7 @@ mat-panel-title.mat-expansion-panel-header-title.mat-h3 {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div>  <div id="title">    <h1><strong>Sources</strong></h1>  </div>  <mat-accordion>    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" *ngFor="let feed of feeds">      <mat-expansion-panel-header>        <mat-panel-title class="mat-h3">          <mat-icon class="custom-icon" aria-hidden="false" aria-label="list icon">history_edu</mat-icon>          {{feed.title | slice:8:feed.title.length}}        </mat-panel-title>      </mat-expansion-panel-header>      <section class="list" *ngFor="let category of feed.categories">        <mat-checkbox color="accent" [(ngModel)]="category.completed" (ngModelChange)="updateAllComplete(feed)">          {{category.name}}        </mat-checkbox>      </section>      <section class="list">        <mat-checkbox color="primary" [checked]="feed.allComplete" [indeterminate]="someComplete(feed)"          (change)="setAll($event.checked, feed)">          All        </mat-checkbox>      </section>    </mat-expansion-panel>  </mat-accordion></div></div>'
+        var COMPONENT_TEMPLATE = '<div><div>  <div id="title">    <h1><strong>Sources</strong></h1>  </div>  <mat-accordion *ngIf="!!feeds && feeds.length > 0">    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" *ngFor="let feed of feeds">      <mat-expansion-panel-header>        <mat-panel-title class="mat-h3" *ngIf="!!feed.title">          <mat-icon class="custom-icon" aria-hidden="false" aria-label="list icon">history_edu</mat-icon>          {{feed.title | slice:8:feed.title.length}}        </mat-panel-title>      </mat-expansion-panel-header>      <section class="list" *ngFor="let category of feed.categories">        <mat-checkbox color="accent" [(ngModel)]="category.completed" (ngModelChange)="updateAllComplete(feed)">          {{category.name}}        </mat-checkbox>      </section>      <section class="list">        <mat-checkbox color="primary" [checked]="feed.allComplete" [indeterminate]="someComplete(feed)"          (change)="setAll($event.checked, feed)">          All        </mat-checkbox>      </section>    </mat-expansion-panel>  </mat-accordion></div></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomepageComponent', 'selector': 'app-homepage'},{'name': 'LoadingComponent', 'selector': 'app-loading'},{'name': 'NewsCardComponent', 'selector': 'app-news-card'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'}];
     var DIRECTIVES = [{'name': 'CustomizePaginatorDirective', 'selector': '[appCustomizePaginator]'}];
     var ACTUAL_COMPONENT = {'name': 'SidebarComponent'};
