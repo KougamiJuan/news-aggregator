@@ -150,7 +150,6 @@
                                 <a href="#initPageRange">initPageRange</a>
                             </li>
                             <li>
-                                    <span class="modifier">Public</span>
                                 <a href="#ngAfterViewInit">ngAfterViewInit</a>
                             </li>
                             <li>
@@ -468,7 +467,6 @@
                     <a name="ngAfterViewInit"></a>
                     <span class="name">
                         <b>
-                            <span class="modifier">Public</span>
                             ngAfterViewInit
                         </b>
                         <a href="#ngAfterViewInit"><span class="icon ion-ios-link"></span></a>
@@ -477,8 +475,7 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-                    <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>ngAfterViewInit()</code>
+<code>ngAfterViewInit()</code>
                 </td>
             </tr>
 
@@ -1047,9 +1044,10 @@ export class CustomizePaginatorDirective implements AfterViewInit {
   /**
    * Method for making changes after customizer is created.
    */
-  public ngAfterViewInit(): void {
+  ngAfterViewInit(): void {
     this.initPageRange();
   }
+
 }
 </code></pre>
     </div>

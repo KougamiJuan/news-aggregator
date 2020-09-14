@@ -213,7 +213,7 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
 import { HttpClient } from &#x27;@angular/common/http&#x27;;
 import { xmlToJson } from &#x27;src/app/utils/transform&#x27;;
-import { TOPICS } from &#x27;src/app/utils/constants&#x27;;
+import { TOPICS, PROXY_URL } from &#x27;src/app/utils/constants&#x27;;
 
 /** Feed connection service. */
 @Injectable({
@@ -231,7 +231,7 @@ export class FeedRssService {
   async getFeeds(): Promise&lt;any[]&gt; {
     const feedRss &#x3D; [];
     await Promise.all(TOPICS.map(async topic &#x3D;&gt; {
-      const response &#x3D; await this.http.get(topic, { responseType: &#x27;text&#x27; }).toPromise();
+      const response &#x3D; await this.http.get(PROXY_URL + topic, { responseType: &#x27;text&#x27; }).toPromise();
       feedRss.push(xmlToJson(response));
     }));
     return feedRss;

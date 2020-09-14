@@ -65,6 +65,9 @@
                             <a href="#environment" title="src/environments/environment.ts"><b>environment</b>&nbsp;&nbsp;&nbsp;(src/.../environment.ts)</a>
                         </li>
                         <li>
+                            <a href="#PROXY_URL" title="src/app/utils/constants.ts"><b>PROXY_URL</b>&nbsp;&nbsp;&nbsp;(src/.../constants.ts)</a>
+                        </li>
+                        <li>
                             <a href="#TOPICS" title="src/app/utils/constants.ts"><b>TOPICS</b>&nbsp;&nbsp;&nbsp;(src/.../constants.ts)</a>
                         </li>
                     </ul>
@@ -156,6 +159,39 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
+                        <a name="PROXY_URL"></a>
+                        <span class="name">
+                            <b>
+                            PROXY_URL</b>
+                            <a href="#PROXY_URL"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>&#x27;https://cors-anywhere.herokuapp.com/&#x27;</code>
+                        </td>
+                    </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>CORS Anywhere server at Heroku. </p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
                         <a name="TOPICS"></a>
                         <span class="name">
                             <b>
@@ -173,21 +209,21 @@
                     <tr>
                         <td class="col-md-4">
                             <i>Default value : </i><code>[
-  &#x27;colombia.xml&#x27;,
-  &#x27;mundo.xml&#x27;,
-  &#x27;mundo_latinoamerica.xml&#x27;,
-  &#x27;mundo_eeuu-y-canada.xml&#x27;,
-  &#x27;mundo_asia.xml&#x27;,
-  &#x27;economia&#x27;,
-  &#x27;negocios&#x27;,
-  &#x27;internacional&#x27;,
-  &#x27;innovacion&#x27;,
-  &#x27;tendencias&#x27;,
-  &#x27;computadoras/feed/&#x27;,
-  &#x27;videojuego/feed/&#x27;,
-  &#x27;fotografia/feed/&#x27;,
-  &#x27;sociales/feed/&#x27;,
-  &#x27;celular/feed/&#x27;
+  &#x27;https://www.eltiempo.com/rss/colombia.xml&#x27;,
+  &#x27;https://www.eltiempo.com/rss/mundo.xml&#x27;,
+  &#x27;https://www.eltiempo.com/rss/mundo_latinoamerica.xml&#x27;,
+  &#x27;https://www.eltiempo.com/rss/mundo_eeuu-y-canada.xml&#x27;,
+  &#x27;https://www.eltiempo.com/rss/mundo_asia.xml&#x27;,
+  &#x27;https://www.portafolio.co/rss/economia&#x27;,
+  &#x27;https://www.portafolio.co/rss/negocios&#x27;,
+  &#x27;https://www.portafolio.co/rss/mis-finanzas&#x27;,
+  &#x27;https://www.portafolio.co/rss/innovacion&#x27;,
+  &#x27;https://www.portafolio.co/rss/tendencias&#x27;,
+  &#x27;https://es.digitaltrends.com/computadoras/feed/&#x27;,
+  &#x27;https://es.digitaltrends.com/videojuego/feed/&#x27;,
+  &#x27;https://es.digitaltrends.com/fotografia/feed/&#x27;,
+  &#x27;https://es.digitaltrends.com/sociales/feed/&#x27;,
+  &#x27;https://es.digitaltrends.com/celular/feed/&#x27;
 ]</code>
                         </td>
                     </tr>
